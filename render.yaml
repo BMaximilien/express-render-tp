@@ -7,12 +7,12 @@ services:
     startCommand: node app.js
     envVars:
       - key: DATABASE_URL
-        value: postgresql://db_tp_hwx8_user:SOh52Wz7CH1xuxeKKu8Y6h4AFWXYgoZx@dpg-d6ptt8p4tr6s739bledg-a/db_tp_hwx8
+        fromDatabase:
+          name: db-tp
+          property: connectionString
         
 databases:
   - name: db-tp
     postgresMajorVersion: '18' # Default: most recent supported version
     region: frankfurt # Default: oregon
     plan: free # Default: basic-256mb
-    databaseName: db_tp_hwx8 # Default: generated value based on name
-    user: db_tp_hwx8_user # Default: generated value based on name
